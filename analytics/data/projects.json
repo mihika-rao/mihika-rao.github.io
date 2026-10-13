@@ -1,0 +1,81 @@
+[
+  {
+    "slug": "the-sky-were-missing",
+    "title": "The sky we’re missing",
+    "date": "2026-10-13",
+    "number": "001",
+    "tags": [
+      "Geospatial analysis",
+      "Python",
+      "Astronomy"
+    ],
+    "summary": "How much of each country lies under skies that hide the Milky Way? Eight maps, one raw dataset, and a visibility question.",
+    "image": "assets/sky-missing/chart.svg",
+    "image_alt": "Maps of eight selected European countries. Modeled skyglow obscures the Milky Way over 51.9% of Belgium’s mapped area and 2.9% of Switzerland’s.",
+    "question": "Where does artificial light obscure the Milky Way—and how much of each country does that cover?",
+    "approach": "I classified the World Atlas’s raw sky-brightness cells using its Milky Way visibility cutoff, clipped them to country boundaries, and weighted each cell by its geographic area. The denominator is mapped area throughout; no population data are used.",
+    "finding": "In this eight-country selection, about half of Belgium’s mapped area lies above the cutoff, compared with about 3% of Switzerland’s. The maps show where those areas fall, rather than using decorative shapes to stand in for geography.",
+    "limits": "These are historical modeled estimates from 2014 satellite inputs, published in 2016. The eight countries are a selected comparison, not a Europe-wide ranking. Observing conditions affect real visibility. Maps are resized independently; compare the percentages, not silhouette size.",
+    "method_note": "Cutoff: artificial zenith brightness >0.688 mcd/m². Native-resolution cells are area-weighted on the WGS84 ellipsoid. European territories only; generalized Natural Earth boundaries. Boundary inclusion changes every result by less than 0.4 percentage points. Full cutoff sensitivity and geographic scope are in the reproducibility files.",
+    "csv": "assets/sky-missing/results.csv",
+    "code": "assets/sky-missing/analyse.py",
+    "download": "assets/sky-missing/reproduce.zip",
+    "sources": [
+      {
+        "label": "World Atlas of Artificial Night Sky Brightness — GFZ Data Services (2016)",
+        "url": "https://doi.org/10.5880/GFZ.1.4.2016.001"
+      },
+      {
+        "label": "Natural Earth — 1:10m country boundaries, v5.1.1",
+        "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/"
+      },
+      {
+        "label": "Falchi et al. (2016) — model and visibility cutoff",
+        "url": "https://doi.org/10.1126/sciadv.1600377"
+      }
+    ],
+    "table": {
+      "caption": "Modeled mapped area where skyglow obscures the Milky Way",
+      "columns": [
+        "Country",
+        "Mapped area"
+      ],
+      "rows": [
+        [
+          "Belgium",
+          "51.9%"
+        ],
+        [
+          "Netherlands",
+          "40.1%"
+        ],
+        [
+          "Italy",
+          "19.7%"
+        ],
+        [
+          "United Kingdom",
+          "13.7%"
+        ],
+        [
+          "France",
+          "6.6%"
+        ],
+        [
+          "Spain",
+          "6.6%"
+        ],
+        [
+          "Germany",
+          "4.8%"
+        ],
+        [
+          "Switzerland",
+          "2.9%"
+        ]
+      ]
+    },
+    "rights_note": "Atlas-derived data and map: CC BY-NC 4.0; cropped, classified, and aggregated. Boundary data: Natural Earth, public domain.",
+    "rights_url": "https://creativecommons.org/licenses/by-nc/4.0/"
+  }
+]
